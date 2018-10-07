@@ -1,0 +1,136 @@
+$hover: "&:hover, &:active, &:focus";
+$textInputs: "input[type=\"text\"], input[type=\"search\"], input[type=\"email\"], input[type=\"password\"], input[type=\"tel\"], input[type=\"url\"]";
+
+.widget-title
+{
+    display: inline-block;
+    padding-bottom: 9px;
+    padding-right: 14px;
+    border-bottom: solid 3px _palette(alert);
+    font-size: _size(widget-title);
+
+    &.large
+    {
+        font-size: _size(widget-title-lg);
+        padding-bottom: 12px;
+        padding-right: 19px;
+    }
+}
+
+.widget-post
+{
+    &.large-post
+    {
+        .post-img { height: auto; }
+    }
+
+    .post-img
+    {
+        @include border-radius(_size(border-radius));
+        display: block;
+        height: 164px;
+        overflow: hidden;
+
+        &:hover img { transform: scale(1.075);}
+
+        img
+        {
+            @include transition(all _size(animate-time) ease);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+    }
+    p { margin-top: 20px; }
+    .post-title { margin-top: 30px; }
+    p { margin-bottom: 0; }
+    .post-btn { margin-top: 26px; }
+}
+
+.grid-table
+{
+    display: grid;
+    grid-gap: 0 0;
+    grid-template-columns: repeat(2, 50%);
+
+    .table-item
+    {
+        @include vendor('display', 'flex');
+        @include vendor('align-items', 'flex-start');
+        @include vendor('justify-content', 'center');
+
+        &:nth-child(even)
+        {
+            padding-left: 44px;
+            border-left: solid 1px _palette(border-grey);
+            border-left: solid 1px _palette(border-grey-a);
+        }
+        &:nth-child(odd) { padding-right: 44px; }
+        &:nth-child(n+3)
+        {
+            padding-top: 44px;
+            border-top: solid 1px _palette(border-grey);
+            border-top: solid 1px _palette(border-grey-a);
+        }
+        &:nth-child(-n+3) { padding-bottom: 44px; }
+    }
+
+    @media screen and ( max-width: _sres(iphone-max) )
+    {
+        grid-template-columns: repeat(1, 100%);
+
+        .table-item
+        {
+            padding-top: 22px;
+            padding-bottom: 22px;
+            border-top: solid 1px _palette(border-grey);
+            border-top: solid 1px _palette(border-grey-a);
+
+            &:first-child
+            {
+                padding-top: 0;
+                border: none;
+            }
+            &:nth-child(even)
+            {
+                padding-left: 0;
+                border-left: none;
+            }
+            &:nth-child(odd) { padding-right: 0; }
+            &:nth-child(n+3)
+            {
+                padding-top: 22px;
+            }
+            &:nth-child(-n+3) { padding-bottom: 22px; }
+        }
+    }
+}
+
+.socials
+{
+    @include vendor('flex', '0 0 auto');
+    @include vendor('display', 'flex');
+    @include vendor('align-items', 'center');
+
+    .soc-item
+    {
+        margin-left: 14px;
+
+        &:first-child { margin-left: 0; }
+
+        .icon
+        {
+            @include transition(all _size(animate-time) ease-in-out);
+            font-size: _size(soc-icon);
+        }
+    }
+
+    @media screen and ( max-width: _sres(ipad-min) )
+    {
+        position: absolute;
+        right: 20px;
+        top: 0;
+        height: 66px;
+    }
+}

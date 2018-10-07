@@ -1,0 +1,246 @@
+#hideSidebarBtn
+{
+    @include vendor('display', 'flex');
+    @include vendor('align-items', 'center');
+    @include vendor('justify-content', 'center');
+    position: absolute;
+    right: -66px;
+    top: 0;
+    width: 66px;
+    height: 82px;
+    padding: 0;
+
+    &:before
+    {
+        content: '\f0c9';
+        font-size: 2rem;
+        color: _palette(alert);
+        font-family: _font(icons);
+
+        @media screen and ( max-width: _sres(desktop-lg) )
+        {
+            font-size: 1.5rem;
+        }
+    }
+
+    @media screen and ( max-width: _sres(pre-desktop-min) )
+    {
+        &:before
+        {
+            color: _palette(text);
+            font-size: 1.1rem;
+            z-index: _z-index(content);
+            margin-left: 16px;
+            margin-top: -14px;
+        }
+        &:after {
+            @include border-radius(_size(border-radius));
+            background: rgb(222, 225, 226);
+            background: rgba(222, 225, 226, 0.75);
+            content: '';
+            width: 60px;
+            height: 42px;
+            position: absolute;
+            left: 12px;
+            top: 12px;
+        }
+    }
+}
+
+#asideInner
+{
+    width: _size(sidebar);
+    padding-bottom: _size(sidebar-bottom-pad);
+
+    &.fixed
+    {
+        position: fixed;
+        left: 0;
+        bottom: _size(sidebar-bottom-pad);
+    }
+
+    @media screen and ( max-width: _sres(desktop-sm) )
+    {
+        overflow-y: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        overflow-x: hidden;
+        height: 100%;
+    }
+}
+
+aside
+{
+    @include transition(all 0.5s ease);
+    position: relative;
+    width: _size(sidebar);
+    background: _palette(light-grey);
+
+    &.hidden
+    {
+        @include hidden-aside();
+    }
+
+    .widget
+    {
+        margin-left: _size(sidebar-pad);
+        margin-right: _size(sidebar-pad);
+    }
+    p { font-size: _size(par-small); }
+
+    .widget-post
+    {
+        padding-top: 26px;
+        margin-top: 26px;
+        border-top: solid 1px _palette(border-grey);
+        border-top: solid 1px _palette(border-grey-a);
+
+        &:first-of-type
+        {
+            padding-top: 0;
+            border-top: none;
+        }
+    }
+
+    @media screen and ( max-width: _sres(desktop-sm) )
+    {
+        @include box-shadow(0 0 5em 0 rgba(0, 0, 0, 0.175));
+        @include hidden-aside();
+        position: fixed;
+        width: _size(sidebar-sm);
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: _z-index(popup);
+
+        &.hidden
+        {
+            margin-left: 0;
+
+            #asideInner { display: block; }
+        }
+    }
+}
+
+.widget
+{
+    margin-top: 46px;
+    padding-top: 46px;
+    border-top: solid 2px _palette(border-grey);
+    border-top: solid 2px _palette(border-grey-a);
+
+    &:first-of-type
+    {
+        margin-top: 0;
+        border-top: none;
+    }
+
+    .widget-title
+    {
+        + * { margin-top: 36px; }
+    }
+}
+
+.widget-menu
+{
+    font-family: _font(extra);
+
+    > ul
+    {
+        text-transform: uppercase;
+        letter-spacing: _size(letter-space);
+        color: _palette(dark-grey);
+
+        > li
+        {
+            padding: 6px 0;
+            border-top: solid 1px _palette(border-grey);
+            border-top: solid 1px _palette(border-grey-a);
+            font-size: _size(menu-item);
+
+            &:first-child { border: none; }
+
+            > a { padding: 7px 0; }
+        }
+    }
+    ul, li, a
+    {
+        display: block;
+    }
+
+    .sub
+    {
+        &.expand
+        {
+            > ul { display: block; }
+            > a:after { transform: rotate(180deg); }
+        }
+
+        > ul
+        {
+            display: none;
+            padding-left: 13px;
+
+            li
+            {
+                padding: 2px 0;
+
+                a
+                {
+                    @include transition(color _size(animate-time) ease-in-out);
+                    padding: 6px 0;
+                    font-size: _size(submenu-item);
+                    color: _palette(grey-icon);
+
+                    #{$hover} { color: _palette(alert); }
+                }
+            }
+        }
+        > a
+        {
+            @include vendor('display', 'flex');
+            @include vendor('align-items', 'center');
+            @include vendor('justify-content', 'space-between');
+
+            &:after
+            {
+                @include transition(all _size(animate-time) ease-in-out);
+                content: "\f078";
+                color: _palette(grey-icon);
+                font-family: _font(icons);
+                font-size: _size(menu-item);
+            }
+        }
+    }
+}
+
+.contacts-list
+{
+    .contact-item
+    {
+        display: block;
+        border-top: solid 1px _palette(border-grey);
+        border-top: solid 1px _palette(border-grey-a);
+        margin: 20px 0 0 0;
+        padding: 20px 0 0 40px;
+        position: relative;
+        font-size: _size(par-small);
+
+        &:first-child
+        {
+            margin-top: 0;
+            border: none;
+        }
+
+        .icon
+        {
+            color: #f56a6a;
+            font-size: _size(icon);
+            left: 0;
+            position: absolute;
+            top: 1em;
+        }
+    }
+}

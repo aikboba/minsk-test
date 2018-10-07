@@ -1,0 +1,80 @@
+// Screen resolution.
+$sres: (
+        desktop-lg:         1680px,
+        desktop-sm:         1280px,
+        desktop-min:        1024px,
+        pre-desktop-min:    980px,
+        ipad-min:           736px,
+        smartphone:         680px,
+        middle-device:      526px,
+        iphone-max:         480px,
+        iphone-min:         320px,
+);
+
+// Size.
+$size: (
+    h1:                     3.208rem,
+    h1-d-lg:                2.917rem,
+    widget-title-lg:        1.604rem,
+    widget-title:           1.146rem,
+    page-name:              1.03rem,
+    subtitle:               0.833rem,
+    input-text:             0.917rem,
+    par:                    0.917rem,
+    par-small:              0.825rem,
+    par-tiny:               0.743rem,
+    menu-item:              0.743rem,
+    submenu-item:           0.66rem,
+    button:                 0.66rem,
+    button-lg:              0.733rem,
+    icon:                   1.238rem,
+    soc-icon:               1.146rem,
+
+    par-lh:                 1.513rem,
+
+    letter-space:           0.069rem,
+    letter-space-btn:       0.05rem,
+    letter-space-btn-lg:    0.06rem,
+
+    border-radius:          5px,
+    border-radius-sm:       4px,
+
+    sidebar-pad:            22px,
+
+    animate-time:           0.2s,
+
+    sidebar:                316px,
+    sidebar-sm:             260px,
+    sidebar-bottom-pad:     17px,
+);
+    
+// Z-indexes.
+$z-index: (
+    bg: 		1,
+    content:	2,
+    popup-over:	90,
+    popup:		99,
+);
+
+// Font.
+$font: (
+    family:		("Open Sans", sans-serif),
+    extra:		("Roboto Slab", serif),
+    icons:		("FontAwesome"),
+);
+
+// Palette.
+$palette: (
+    bg:                 #ffffff,
+    light-grey:         #f5f6f7,
+    grey:               #eff1f2,
+    grey-icon:          #9fa3a6,
+    dark-grey:          #3d4449,
+    border-grey:        rgb(210, 215, 217),
+    border-grey-a:      rgba(210, 215, 217, 0.75),
+    pink:               rgb(245, 106, 106),
+    pink-a:             rgba(245, 106, 106, 0.05),
+    alert:              #f56a6a,
+    text-input:         #676d79,
+    text:               #7f888f,
+);

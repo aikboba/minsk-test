@@ -1,0 +1,78 @@
+.sidebar-form
+{
+    padding: _size(sidebar-pad);
+    background: _palette(grey);
+}
+
+input, select, textarea
+{
+    font-size: _size(input-text);
+    font-family: _font(family);
+
+    &::placeholder { color: inherit; }
+}
+#{$textInputs}, select, textarea
+{
+    @include border-radius(5px);
+    border: solid 1px _palette(border-grey);
+    border: solid 1px _palette(border-grey-a);
+    color: inherit;
+
+    &:focus
+    {
+        border-color: _palette(alert);
+        box-shadow: 0 0 0 1px _palette(alert);
+        outline: none;
+    }
+}
+
+.input-wrap
+{
+    position: relative;
+
+    #{$textInputs}
+    {
+        padding-right: 40px;
+    }
+
+    &.search-input
+    {
+        &:after
+        {
+            @include transform(scaleX(-1));
+            color: _palette(text);
+            font-family: _font(icons);
+            content: '\f002';
+            cursor: default;
+            display: block;
+            font-size: 1.238rem;
+            height: 100%;
+            line-height: 38px;
+            opacity: 0.325;
+            position: absolute;
+            right: 0;
+            text-align: center;
+            top: 0;
+            width: 40px;
+        }
+    }
+}
+#{$textInputs}
+{
+
+    width: 100%;
+    height: 38px;
+    padding: 0 14px;
+    line-height: 38px;
+}
+
+button
+{
+    cursor: pointer;
+
+    &.designed
+    {
+        border: none;
+        background: none;
+    }
+}

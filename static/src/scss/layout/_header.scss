@@ -1,0 +1,21 @@
+header
+{
+    @include vendor('display', 'flex');
+    margin-bottom: 73px;
+    padding-bottom: 14px;
+    border-bottom: solid 5px _palette(alert);
+
+    > * { @include vendor('flex', '1'); }
+
+    .name
+    {
+        font-family: _font(extra);
+        font-size: _size(page-name);
+
+        > span
+        {
+            font-weight: 700;
+            color: _palette(dark-grey);
+        }
+    }
+}

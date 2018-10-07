@@ -1,0 +1,12 @@
+footer
+{
+    p { font-size: _size(par-tiny); }
+
+    a
+    {
+        @include transition(all _size(animate-time) ease-in-out);
+        border-bottom: dotted 1px;
+
+        #{$hover} { border-bottom-color: _palette(alert); }
+    }
+}

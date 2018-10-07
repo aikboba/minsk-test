@@ -1,0 +1,39 @@
+@import 'libs/vars';
+@import 'libs/functions';
+@import 'libs/mixins';
+@import 'libs/skel';
+
+@include skel-breakpoints((
+    xlarge: '(max-width: 1680px)',
+    large: '(max-width: 1280px)',
+    medium: '(max-width: 980px)',
+    small: '(max-width: 736px)',
+    xsmall: '(max-width: 480px)',
+    xxsmall: '(max-width: 360px)'
+));
+
+// Plugins.
+@import 'plugins/font-awesome/fontawesome';
+
+// Base
+
+    @import 'base/fonts';
+    @import 'base/page';
+	@import 'base/typography';
+
+// Component
+
+	@import 'components/helper';
+    @import 'components/list';
+	@import 'components/form';
+	@import 'components/image';
+	@import 'components/table';
+	@import 'components/button';
+    @import 'components/reassigns';
+
+// Layout
+
+	@import 'layout/header';
+	@import 'layout/main';
+    @import 'layout/sidebar';
+	@import 'layout/footer';

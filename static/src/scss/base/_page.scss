@@ -1,0 +1,197 @@
+main
+{
+    > article { padding-bottom: 73px; }
+    section
+    {
+        padding-top: 36px;
+        padding-bottom: 12px;
+        border-top: solid 2px _palette(border-grey);
+        border-top: solid 2px _palette(border-grey-a);
+
+        .widget-title { margin-bottom: 51px; }
+    }
+    p
+    {
+        line-height: _size(par-lh);
+
+        @media screen and ( max-width: _sres(desktop-sm) )
+        {
+            line-height: 1.375rem;
+        }
+    }
+}
+
+.subtitle
+{
+    display: block;
+    font-family: _font(extra);
+    font-size: _size(subtitle);
+    letter-spacing: _size(letter-space);
+    text-transform: uppercase;
+}
+
+p
+{
+    font-size: _size(par);
+
+    @media screen and ( max-width: _sres(desktop-sm) )
+    {
+        font-size: 0.833rem;
+    }
+}
+
+article
+{
+
+    h1
+    {
+        margin-top: -6px;
+        margin-bottom: 19px;
+
+        @media screen and ( max-width: _sres(smartphone) )
+        {
+            margin-bottom: 10px;
+        }
+    }
+    .subtitle { margin-bottom: 29px; }
+    p { margin-bottom: 29px; }
+
+    &.content-with-image-type
+    {
+        @include vendor('display', 'flex');
+        @include vendor('align-items', 'stretch');
+        @include vendor('justify-content', 'space-between');
+
+        .content
+        {
+            @include vendor('flex', '1 1 auto');
+            width: 50%;
+        }
+        figure
+        {
+            @include vendor('flex', '0 0 auto');
+            display: block;
+            margin-left: 58px;
+            width: 50%;
+
+            img
+            {
+                @include border-radius(_size(border-radius));
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        @media screen and ( max-width: _sres(smartphone) )
+        {
+            @include vendor('align-items', 'flex-start');
+            @include vendor('justify-content', 'flex-start');
+            @include vendor('flex-direction', 'column-reverse');
+
+            .content { width: auto; }
+            figure
+            {
+                margin-left: 0;
+                margin-bottom: 53px;
+                width: auto;
+                height: 333px;
+            }
+        }
+        @media screen and ( max-width: _sres(iphone-max) )
+        {
+            figure { height: 216px; }
+        }
+    }
+}
+
+.features
+{
+    @include vendor('display', 'flex');
+    @include vendor('align-items', 'flex-start');
+    @include vendor('flex-wrap', 'wrap');
+    margin: 0 -22px;
+
+    .feature-item
+    {
+        @include vendor('display', 'flex');
+        @include vendor('align-items', 'center');
+        width: calc(50% - 44px);
+        margin: 0 22px 44px;
+
+        .icon
+        {
+            @include vendor('flex', '0 0 auto');
+            @include vendor('display', 'flex');
+            @include vendor('align-items', 'center');
+            @include vendor('justify-content', 'center');
+            position: relative;
+            width: 146px;
+            height: 146px;
+
+            &:before
+            {
+                color: _palette(alert);
+                font-size: 2.75rem;
+            }
+            &:after
+            {
+                @include box-sizing(border-box);
+                @include transform(rotate(45deg));
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-left: -51px;
+                margin-top: -51px;
+                border-radius: 0.25rem;
+                border: solid 2px _palette(border-grey);
+                border: solid 2px _palette(border-grey-a);
+                display: block;
+                width: 102px;
+                height: 102px;
+
+                @media screen and ( max-width: _sres(pre-desktop-min) )
+                {
+                    width: 80px;
+                    height: 80px;
+                    margin-left: -40px;
+                    margin-top: -40px;
+                }
+            }
+
+            @media screen and ( max-width: _sres(pre-desktop-min) )
+            {
+                width: 106px;
+                height: 106px;
+            }
+        }
+        .content
+        {
+            @include vendor('flex', '1 1 auto');
+            padding-left: 29px;
+
+            p
+            {
+                margin-bottom: 0;
+                padding-top: 26px;
+            }
+        }
+
+        @media screen and ( max-width: _sres(pre-desktop-min) )
+        {
+            width: 100%;
+        }
+        @media screen and ( max-width: _sres(iphone-max) )
+        {
+            flex-direction: column;
+            align-items: flex-start;
+
+            .content
+            {
+                padding-left: 0;
+                padding-top: 29px;
+            }
+        }
+    }
+}

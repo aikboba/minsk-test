@@ -1,0 +1,36 @@
+h1, h2, h3, h4, h5, h6
+{
+    color: _palette(dark-grey);
+    font-weight: 700;
+    font-family: _font(extra);
+}
+h1
+{
+    font-size: _size(h1);
+    line-height: 1.3;
+
+    @media screen and ( max-width: _sres(desktop-lg) )
+    {
+        font-size: _size(h1-d-lg);
+    }
+    @media screen and ( max-width: _sres(pre-desktop-min) )
+    {
+        font-size: 1.667rem;
+        line-height: 1.4;
+    }
+}
+h2
+{
+    font-size: 1.3888888889em;
+}
+h3 { font-size: 1.146rem; }
+h4 { font-size: 1.1rem; }
+h5 { font-size: 0.9rem; }
+h6 { font-size: 0.7rem; }
+
+p
+{
+    margin: 26px 0 0 0;
+
+    &:first-of-type { margin-top: 0; }
+}

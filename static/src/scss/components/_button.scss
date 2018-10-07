@@ -1,0 +1,38 @@
+.default-btn
+{
+    @include appearance(none);
+    @include transition(all _size(animate-time) ease-in-out);
+    @include border-radius(_size(border-radius-sm));
+    @include box-shadow(inset 0 0 0 2px _palette(alert));
+    display: inline-block;
+    background-color: transparent;
+    border: none;
+    color: _palette(alert);
+    cursor: pointer;
+    font-family: _font(extra);
+    font-size: _size(button);
+    font-weight: 700;
+    height: 36px;
+    letter-spacing: _size(letter-space-btn);
+    line-height: 36px;
+    padding: 0 24px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    #{$hover}
+    {
+        background: _palette(pink);
+        background: _palette(pink-a);
+    }
+
+    &.large-btn
+    {
+        height: 41px;
+        padding: 0 26px;
+        line-height: 41px;
+        letter-spacing: _size(letter-space-btn-lg);
+        font-size: _size(button-lg);
+    }
+}
